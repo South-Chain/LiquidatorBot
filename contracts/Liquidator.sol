@@ -16,7 +16,7 @@ contract Liquidator is FlashLoanReceiverBase {
     {}
 
     // kovan address
-    address optionsExchangeAddress = 0x3B967C6b89458a590bd3948Bd0053E80455D7b0C;
+    // address optionsExchangeAddress = 0x3B967C6b89458a590bd3948Bd0053E80455D7b0C;
 
     function executeOperation(
         address _reserve,
@@ -24,17 +24,18 @@ contract Liquidator is FlashLoanReceiverBase {
         uint256 _fee,
         bytes calldata _params
     ) external {
-        (address oTokenAddress, address vaultAddr) = getParams(_params);
+        (address oTokenAddr, address vaultAddr) = getParams(_params);
         address payable vaultOwner = address(uint160(vaultAddr));
-        OptionsContract oToken = OptionsContract(oTokenAddress);
+        OptionsContract oToken = OptionsContract(oTokenAddr);
         // 1. Get _amount from the reserve pool
         // 2. Buy oTokens on uniswap
         uint256 oTokensToBuy = oToken.maxOTokensLiquidatable(vaultOwner);
         require(oTokensToBuy > 0, "cannot liquidate a safe vault");
-        OptionsExchange exchange = OptionsExchange(optionsExchangeAddress);
+
+        OptionsExchange exchange = OptionsExchange(oToken.optionsExchange());
         exchange.buyOTokens.value(_amount)(
             address(uint160(address(this))),
-            oTokenAddress,
+            oTokenAddr,
             address(0),
             oTokensToBuy
         );

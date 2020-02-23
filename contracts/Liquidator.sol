@@ -30,6 +30,7 @@ contract Liquidator is FlashLoanReceiverBase {
         // 1. Get _amount from the reserve pool
         // 2. Buy oTokens on uniswap
         uint256 oTokensToBuy = oToken.maxOTokensLiquidatable(vaultOwner);
+        require(oTokensToBuy > 0, "cannot liquidate a safe vault");
         OptionsExchange exchange = OptionsExchange(optionsExchangeAddress);
         exchange.buyOTokens.value(_amount)(
             address(uint160(address(this))),
@@ -38,8 +39,6 @@ contract Liquidator is FlashLoanReceiverBase {
             oTokensToBuy
         );
         // 3. Liquidate
-        require(oToken.isUnsafe(vaultOwner), "cannot liquidate a safe vault");
-        oToken.approve(oTokenAddress, oTokensToBuy);
         oToken.liquidate(vaultOwner, oTokensToBuy);
         // 4. pay back the $
         transferFundsBackToPoolInternal(_reserve, _amount.add(_fee));
@@ -47,7 +46,7 @@ contract Liquidator is FlashLoanReceiverBase {
 
     function bytesToAddress(bytes memory bys)
         private
-        view
+        pure
         returns (address addr)
     {
         //solium-disable-next-line
@@ -58,7 +57,7 @@ contract Liquidator is FlashLoanReceiverBase {
 
     function getParams(bytes memory source)
         public
-        view
+        pure
         returns (address, address)
     {
         bytes memory half1 = new bytes(20);

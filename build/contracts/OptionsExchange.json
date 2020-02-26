@@ -55,25 +55,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.10+commit.5a6ea5b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"receiver\",\"type\":\"address\"},{\"name\":\"oTokenAddress\",\"type\":\"address\"},{\"name\":\"paymentTokenAddress\",\"type\":\"address\"},{\"name\":\"oTokensToBuy\",\"type\":\"uint256\"}],\"name\":\"buyOTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"oTokenAddress\",\"type\":\"address\"},{\"name\":\"paymentTokenAddress\",\"type\":\"address\"},{\"name\":\"oTokensToBuy\",\"type\":\"uint256\"}],\"name\":\"premiumToPay\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/OptionsExchange.sol\":\"OptionsExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/OptionsExchange.sol\":{\"keccak256\":\"0xfb415da07515c651e4a6beb824ef06b35bcf764a17948c77182ab7d1d98a130d\",\"urls\":[\"bzzr://7ae4b1f63dbc44dfa0a53a881351e5e0e7e69690b536e41fd77e0a455523fa5c\",\"dweb:/ipfs/QmSf7XmdTwgVmZqwqGvMimvFCcx9mPqf1efMrq2XHT8Up7\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.10+commit.5a6ea5b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"receiver\",\"type\":\"address\"},{\"name\":\"oTokenAddress\",\"type\":\"address\"},{\"name\":\"paymentTokenAddress\",\"type\":\"address\"},{\"name\":\"oTokensToBuy\",\"type\":\"uint256\"}],\"name\":\"buyOTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"oTokenAddress\",\"type\":\"address\"},{\"name\":\"paymentTokenAddress\",\"type\":\"address\"},{\"name\":\"oTokensToBuy\",\"type\":\"uint256\"}],\"name\":\"premiumToPay\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/OptionsExchange.sol\":\"OptionsExchange\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/OptionsExchange.sol\":{\"keccak256\":\"0xfb415da07515c651e4a6beb824ef06b35bcf764a17948c77182ab7d1d98a130d\",\"urls\":[\"bzzr://7ae4b1f63dbc44dfa0a53a881351e5e0e7e69690b536e41fd77e0a455523fa5c\",\"dweb:/ipfs/QmSf7XmdTwgVmZqwqGvMimvFCcx9mPqf1efMrq2XHT8Up7\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.5.10;\n\ncontract OptionsExchange {\n        function buyOTokens(\n        address payable receiver,\n        address oTokenAddress,\n        address paymentTokenAddress,\n        uint256 oTokensToBuy\n    ) public payable;\n\n    function premiumToPay(\n        address oTokenAddress,\n        address paymentTokenAddress,\n        uint256 oTokensToBuy\n    ) public view returns (uint256);\n}",
-  "sourcePath": "/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/OptionsExchange.sol",
+  "sourcePath": "/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/OptionsExchange.sol",
   "ast": {
-    "absolutePath": "/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/OptionsExchange.sol",
+    "absolutePath": "/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/OptionsExchange.sol",
     "exportedSymbols": {
       "OptionsExchange": [
-        553
+        585
       ]
     },
-    "id": 554,
+    "id": 586,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 530,
+        "id": 562,
         "literals": [
           "solidity",
           "0.5",
@@ -88,9 +88,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 553,
+        "id": 585,
         "linearizedBaseContracts": [
-          553
+          585
         ],
         "name": "OptionsExchange",
         "nodeType": "ContractDefinition",
@@ -98,22 +98,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 541,
+            "id": 573,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "buyOTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 539,
+              "id": 571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 532,
+                  "id": 564,
                   "name": "receiver",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "89:24:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -122,7 +122,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 531,
+                    "id": 563,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "89:15:6",
@@ -137,10 +137,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 534,
+                  "id": 566,
                   "name": "oTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "123:21:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -149,7 +149,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 533,
+                    "id": 565,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "123:7:6",
@@ -164,10 +164,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 536,
+                  "id": 568,
                   "name": "paymentTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "154:27:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -176,7 +176,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 535,
+                    "id": 567,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "154:7:6",
@@ -191,10 +191,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 538,
+                  "id": 570,
                   "name": "oTokensToBuy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "191:20:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -203,7 +203,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 537,
+                    "id": 569,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "191:7:6",
@@ -219,12 +219,12 @@
               "src": "79:138:6"
             },
             "returnParameters": {
-              "id": 540,
+              "id": 572,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "232:0:6"
             },
-            "scope": 553,
+            "scope": 585,
             "src": "60:173:6",
             "stateMutability": "payable",
             "superFunction": null,
@@ -233,22 +233,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 552,
+            "id": 584,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "premiumToPay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 548,
+              "id": 580,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 543,
+                  "id": 575,
                   "name": "oTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "270:21:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -257,7 +257,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 542,
+                    "id": 574,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:6",
@@ -272,10 +272,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 545,
+                  "id": 577,
                   "name": "paymentTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "301:27:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -284,7 +284,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 544,
+                    "id": 576,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "301:7:6",
@@ -299,10 +299,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 547,
+                  "id": 579,
                   "name": "oTokensToBuy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "338:20:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -311,7 +311,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 546,
+                    "id": 578,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "338:7:6",
@@ -327,15 +327,15 @@
               "src": "260:104:6"
             },
             "returnParameters": {
-              "id": 551,
+              "id": 583,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 550,
+                  "id": 582,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "386:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -344,7 +344,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 549,
+                    "id": 581,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "386:7:6",
@@ -359,31 +359,31 @@
               ],
               "src": "385:9:6"
             },
-            "scope": 553,
+            "scope": 585,
             "src": "239:156:6",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 554,
+        "scope": 586,
         "src": "25:372:6"
       }
     ],
     "src": "0:397:6"
   },
   "legacyAST": {
-    "absolutePath": "/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/OptionsExchange.sol",
+    "absolutePath": "/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/OptionsExchange.sol",
     "exportedSymbols": {
       "OptionsExchange": [
-        553
+        585
       ]
     },
-    "id": 554,
+    "id": 586,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 530,
+        "id": 562,
         "literals": [
           "solidity",
           "0.5",
@@ -398,9 +398,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 553,
+        "id": 585,
         "linearizedBaseContracts": [
-          553
+          585
         ],
         "name": "OptionsExchange",
         "nodeType": "ContractDefinition",
@@ -408,22 +408,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 541,
+            "id": 573,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "buyOTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 539,
+              "id": 571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 532,
+                  "id": 564,
                   "name": "receiver",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "89:24:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -432,7 +432,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 531,
+                    "id": 563,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "89:15:6",
@@ -447,10 +447,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 534,
+                  "id": 566,
                   "name": "oTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "123:21:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -459,7 +459,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 533,
+                    "id": 565,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "123:7:6",
@@ -474,10 +474,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 536,
+                  "id": 568,
                   "name": "paymentTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "154:27:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -486,7 +486,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 535,
+                    "id": 567,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "154:7:6",
@@ -501,10 +501,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 538,
+                  "id": 570,
                   "name": "oTokensToBuy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
+                  "scope": 573,
                   "src": "191:20:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -513,7 +513,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 537,
+                    "id": 569,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "191:7:6",
@@ -529,12 +529,12 @@
               "src": "79:138:6"
             },
             "returnParameters": {
-              "id": 540,
+              "id": 572,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "232:0:6"
             },
-            "scope": 553,
+            "scope": 585,
             "src": "60:173:6",
             "stateMutability": "payable",
             "superFunction": null,
@@ -543,22 +543,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 552,
+            "id": 584,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "premiumToPay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 548,
+              "id": 580,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 543,
+                  "id": 575,
                   "name": "oTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "270:21:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -567,7 +567,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 542,
+                    "id": 574,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:6",
@@ -582,10 +582,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 545,
+                  "id": 577,
                   "name": "paymentTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "301:27:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -594,7 +594,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 544,
+                    "id": 576,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "301:7:6",
@@ -609,10 +609,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 547,
+                  "id": 579,
                   "name": "oTokensToBuy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "338:20:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -621,7 +621,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 546,
+                    "id": 578,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "338:7:6",
@@ -637,15 +637,15 @@
               "src": "260:104:6"
             },
             "returnParameters": {
-              "id": 551,
+              "id": 583,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 550,
+                  "id": 582,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 552,
+                  "scope": 584,
                   "src": "386:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -654,7 +654,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 549,
+                    "id": 581,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "386:7:6",
@@ -669,14 +669,14 @@
               ],
               "src": "385:9:6"
             },
-            "scope": 553,
+            "scope": 585,
             "src": "239:156:6",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 554,
+        "scope": 586,
         "src": "25:372:6"
       }
     ],
@@ -687,8 +687,8 @@
     "version": "0.5.10+commit.5a6ea5b1.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.17",
-  "updatedAt": "2020-02-06T02:23:20.983Z",
+  "schemaVersion": "3.0.21",
+  "updatedAt": "2020-02-23T07:12:44.156Z",
   "devdoc": {
     "methods": {}
   },

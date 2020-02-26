@@ -117,15 +117,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.10+commit.5a6ea5b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"_reserve\",\"type\":\"address\"}],\"name\":\"getReserveData\",\"outputs\":[{\"name\":\"totalLiquidity\",\"type\":\"uint256\"},{\"name\":\"availableLiquidity\",\"type\":\"uint256\"},{\"name\":\"totalBorrowsStable\",\"type\":\"uint256\"},{\"name\":\"totalBorrowsVariable\",\"type\":\"uint256\"},{\"name\":\"liquidityRate\",\"type\":\"uint256\"},{\"name\":\"variableBorrowRate\",\"type\":\"uint256\"},{\"name\":\"stableBorrowRate\",\"type\":\"uint256\"},{\"name\":\"averageStableBorrowRate\",\"type\":\"uint256\"},{\"name\":\"utilizationRate\",\"type\":\"uint256\"},{\"name\":\"liquidityIndex\",\"type\":\"uint256\"},{\"name\":\"variableBorrowIndex\",\"type\":\"uint256\"},{\"name\":\"aTokenAddress\",\"type\":\"address\"},{\"name\":\"lastUpdateTimestamp\",\"type\":\"uint40\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_receiver\",\"type\":\"address\"},{\"name\":\"_reserve\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_params\",\"type\":\"bytes\"}],\"name\":\"flashLoan\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_reserve\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_referralCode\",\"type\":\"uint16\"}],\"name\":\"deposit\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/LendingPool.sol\":\"LendingPool\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/LendingPool.sol\":{\"keccak256\":\"0x5b42a5c681a08cc01a4031995842ba625b3d88a245b12e43413e4a2b4cf2c858\",\"urls\":[\"bzzr://4818447df1f647a8e81253a765e22873057af254fb264db103c1def139090760\",\"dweb:/ipfs/QmdJ2w66jJMnf3PWf4ws9SixWmsY5N3FJejBaFEPtAX5uE\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.10+commit.5a6ea5b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"_reserve\",\"type\":\"address\"}],\"name\":\"getReserveData\",\"outputs\":[{\"name\":\"totalLiquidity\",\"type\":\"uint256\"},{\"name\":\"availableLiquidity\",\"type\":\"uint256\"},{\"name\":\"totalBorrowsStable\",\"type\":\"uint256\"},{\"name\":\"totalBorrowsVariable\",\"type\":\"uint256\"},{\"name\":\"liquidityRate\",\"type\":\"uint256\"},{\"name\":\"variableBorrowRate\",\"type\":\"uint256\"},{\"name\":\"stableBorrowRate\",\"type\":\"uint256\"},{\"name\":\"averageStableBorrowRate\",\"type\":\"uint256\"},{\"name\":\"utilizationRate\",\"type\":\"uint256\"},{\"name\":\"liquidityIndex\",\"type\":\"uint256\"},{\"name\":\"variableBorrowIndex\",\"type\":\"uint256\"},{\"name\":\"aTokenAddress\",\"type\":\"address\"},{\"name\":\"lastUpdateTimestamp\",\"type\":\"uint40\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_receiver\",\"type\":\"address\"},{\"name\":\"_reserve\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_params\",\"type\":\"bytes\"}],\"name\":\"flashLoan\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_reserve\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_referralCode\",\"type\":\"uint16\"}],\"name\":\"deposit\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/LendingPool.sol\":\"LendingPool\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/LendingPool.sol\":{\"keccak256\":\"0x5b42a5c681a08cc01a4031995842ba625b3d88a245b12e43413e4a2b4cf2c858\",\"urls\":[\"bzzr://4818447df1f647a8e81253a765e22873057af254fb264db103c1def139090760\",\"dweb:/ipfs/QmdJ2w66jJMnf3PWf4ws9SixWmsY5N3FJejBaFEPtAX5uE\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\ninterface LendingPool {\n        function flashLoan(address _receiver, address _reserve, uint256 _amount, bytes calldata _params) external;\n        function deposit( address _reserve, uint256 _amount, uint16 _referralCode) external;\n        function getReserveData(address _reserve)\n        external\n        view\n        returns (\n            uint256 totalLiquidity,\n            uint256 availableLiquidity,\n            uint256 totalBorrowsStable,\n            uint256 totalBorrowsVariable,\n            uint256 liquidityRate,\n            uint256 variableBorrowRate,\n            uint256 stableBorrowRate,\n            uint256 averageStableBorrowRate,\n            uint256 utilizationRate,\n            uint256 liquidityIndex,\n            uint256 variableBorrowIndex,\n            address aTokenAddress,\n            uint40 lastUpdateTimestamp\n        );\n}",
-  "sourcePath": "/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/LendingPool.sol",
+  "sourcePath": "/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/LendingPool.sol",
   "ast": {
-    "absolutePath": "/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/LendingPool.sol",
+    "absolutePath": "/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/LendingPool.sol",
     "exportedSymbols": {
       "LendingPool": [
         284
@@ -802,7 +802,7 @@
     "src": "0:871:2"
   },
   "legacyAST": {
-    "absolutePath": "/Users/aparnakrishnan/Desktop/Opyn/Liquidator/contracts/LendingPool.sol",
+    "absolutePath": "/Users/antonasso/programming/ethdenver/opyn/LiquidatorBot/contracts/LendingPool.sol",
     "exportedSymbols": {
       "LendingPool": [
         284
@@ -1483,8 +1483,8 @@
     "version": "0.5.10+commit.5a6ea5b1.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.19",
-  "updatedAt": "2020-02-06T16:26:16.081Z",
+  "schemaVersion": "3.0.21",
+  "updatedAt": "2020-02-23T07:12:44.148Z",
   "devdoc": {
     "methods": {}
   },

@@ -12,6 +12,7 @@ declare global {
       require(
         name: "FlashLoanReceiverBase"
       ): TruffleContracts.FlashLoanReceiverBaseContract;
+      require(name: "IERC20"): TruffleContracts.IERC20Contract;
       require(
         name: "ILendingPoolAddressesProvider"
       ): TruffleContracts.ILendingPoolAddressesProviderContract;
@@ -25,6 +26,7 @@ declare global {
       require(
         name: "OptionsExchange"
       ): TruffleContracts.OptionsExchangeContract;
+      require(name: "Oracle"): TruffleContracts.OracleContract;
     }
   }
 }

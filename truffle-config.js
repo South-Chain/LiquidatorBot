@@ -1,6 +1,8 @@
+/* eslint-disable */
 require('ts-node/register');
+const fs = require('fs')
 const HDWalletProvider = require('truffle-hdwallet-provider');
-
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
 const mnemonic = "cycle increase miracle mouse oblige alien life wire proof vacant section coffee";
 
 module.exports = {

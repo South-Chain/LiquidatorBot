@@ -15,9 +15,6 @@ contract Liquidator is FlashLoanReceiverBase {
         FlashLoanReceiverBase(ILendingAddress)
     {}
 
-    // kovan address
-    // address optionsExchangeAddress = 0x3B967C6b89458a590bd3948Bd0053E80455D7b0C;
-
     function executeOperation(
         address _reserve,
         uint256 _amount,
@@ -43,6 +40,8 @@ contract Liquidator is FlashLoanReceiverBase {
         oToken.liquidate(vaultOwner, oTokensToBuy);
         // 4. pay back the $
         transferFundsBackToPoolInternal(_reserve, _amount.add(_fee));
+        // 5. pay the user who liquidated
+        tx.origin.transfer(address(this).balance);
     }
 
     function bytesToAddress(bytes memory bys)

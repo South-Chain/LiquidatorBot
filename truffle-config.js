@@ -20,6 +20,14 @@ module.exports = {
       gas: 6700000,
       gasPrice: 10000000000
     },
+    mainnet: {
+      provider: () => {
+        return new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/ae145ebad7c8499db7901246fd1271f7");
+      },
+      network_id: 1,
+      gas: 1600000,
+      gasPrice: 4000000000
+    },
   },
   compilers: {
     solc: {

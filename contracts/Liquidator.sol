@@ -38,7 +38,6 @@ contract Liquidator is FlashLoanReceiverBase {
 
         OptionsExchange exchange = OptionsExchange(oToken.optionsExchange());
 
-        // address paymentToken = _reserve;
         IERC20(_reserve).approve(address(exchange), _amount);
         exchange.buyOTokens(
             address(uint160(address(this))),
@@ -48,6 +47,7 @@ contract Liquidator is FlashLoanReceiverBase {
         );
         // 3. Liquidate
         oToken.liquidate(vaultOwner, oTokensToBuy);
+
         // 4. Use eth to buy back _reserve
         IUniswapExchange uniswap = IUniswapExchange(
             factory.getExchange(_reserve)
@@ -62,6 +62,7 @@ contract Liquidator is FlashLoanReceiverBase {
 
         // // 5. pay back the $
         transferFundsBackToPoolInternal(_reserve, _amount.add(_fee));
+
         // // 6. pay the user who liquidated
         uint256 balance = IERC20(_reserve).balanceOf(address(this));
         IERC20(_reserve).transfer(tx.origin, balance);

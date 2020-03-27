@@ -108,6 +108,7 @@
   },
   "homepage": "https://github.com/aparnakr/OptionsProtocol#readme",
   "dependencies": {
+    "@kollateral/contracts": "^0.1.1",
     "fs": "0.0.1-security",
     "truffle-hdwallet-provider": "^1.0.17"
   }

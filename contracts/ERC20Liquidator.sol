@@ -2,15 +2,16 @@ pragma solidity 0.5.10;
 
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "./FlashLoanReceiverBase.sol";
-import "./OptionsContract.sol";
-import "./OptionsExchange.sol";
-import "./ILendingPoolAddressesProvider.sol";
-import "./IUniswapFactory.sol";
-import "./IUniswapExchange.sol";
+import "./aave/FlashLoanReceiverBase.sol";
+import "./aave/ILendingPoolAddressesProvider.sol";
+import "./opyn/OptionsContract.sol";
+import "./opyn/OptionsExchange.sol";
+
+import "./uniswap/IUniswapFactory.sol";
+import "./uniswap/IUniswapExchange.sol";
 
 
-contract Liquidator is FlashLoanReceiverBase {
+contract ERC20Liquidator is FlashLoanReceiverBase {
     using SafeMath for uint256;
     IUniswapFactory public factory;
 

@@ -1,7 +1,8 @@
 pragma solidity 0.5.10;
 
+
 contract OptionsExchange {
-        function buyOTokens(
+    function buyOTokens(
         address payable receiver,
         address oTokenAddress,
         address paymentTokenAddress,

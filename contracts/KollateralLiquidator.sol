@@ -15,6 +15,7 @@ contract KollateralLiquidator is KollateralInvokable {
     }
 
     function execute(bytes calldata data) external payable {
+        // 1. parse data
         (address vaultAddr, address oTokenAddr) = abi.decode(
             data,
             (address, address)
@@ -49,7 +50,7 @@ contract KollateralLiquidator is KollateralInvokable {
         // 3. Liquidate
         oToken.liquidate(vaultOwner, oTokensToBuy);
 
-        // 4. Use eth to buy back _reserve
+        // 4. Use eth to buy back borrowed token
         if (!isCurrentTokenEther()) {
             IUniswapExchange uniswap = IUniswapExchange(
                 factory.getExchange(currentTokenAddress())
@@ -63,17 +64,14 @@ contract KollateralLiquidator is KollateralInvokable {
             );
         }
 
-        // // 5. pay back the $
+        // 5. pay back the $
         repay();
 
-        // // 6. pay the user who liquidated
-        if (isCurrentTokenEther()) {
-            address(uint160(currentSender())).transfer(address(this).balance);
-        } else {
-            uint256 balance = IERC20(currentTokenAddress()).balanceOf(
-                address(this)
-            );
-            IERC20(currentTokenAddress()).transfer(currentSender(), balance);
-        }
+        // 6. pay the user who liquidated
+        transfer(
+            currentTokenAddress(),
+            currentSender(),
+            balanceOf(currentTokenAddress())
+        );
     }
 }
